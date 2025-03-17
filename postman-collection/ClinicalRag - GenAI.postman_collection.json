@@ -1,0 +1,1756 @@
+{
+	"info": {
+		"_postman_id": "4fd3de0e-af6c-4644-a9c2-73f9f9d53865",
+		"name": "ClinicalRag - GenAI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33646739"
+	},
+	"item": [
+		{
+			"name": "Hello Spring AI",
+			"item": [
+				{
+					"name": "Basic AI 01",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"systemPrompt\": \"You are a pirate.\",\n  \"userPrompt\": \"Give me 3 food names.\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/ai/v1/basic",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"ai",
+								"v1",
+								"basic"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userPrompt\": \"<string>\",\n  \"systemPrompt\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/ai/basic",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"ai",
+										"basic"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": "<string>"
+						}
+					]
+				},
+				{
+					"name": "Basic AI 01 (Stream)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/x-ndjson"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"systemPrompt\": \"You are a pirate.\",\n  \"userPrompt\": \"Give me 3 food names.\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/ai/v1/basic/stream",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"ai",
+								"v1",
+								"basic",
+								"stream"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/x-ndjson"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userPrompt\": \"<string>\",\n  \"systemPrompt\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/ai/basic/stream",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"ai",
+										"basic",
+										"stream"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/x-ndjson"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  \"<string>\",\n  \"<string>\"\n]"
+						}
+					]
+				},
+				{
+					"name": "Basic AI 02",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"systemPrompt\": \"You are a pirate.\",\n  \"userPrompt\": \"Tell me about your last treasure hunt.\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/ai/v1/basic",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"ai",
+								"v1",
+								"basic"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userPrompt\": \"<string>\",\n  \"systemPrompt\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/ai/basic",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"ai",
+										"basic"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": "<string>"
+						}
+					]
+				},
+				{
+					"name": "Basic AI 02 (Stream)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/x-ndjson"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"systemPrompt\": \"You are a pirate.\",\n  \"userPrompt\": \"Tell me about your last treasure hunt.\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/ai/v1/basic/stream",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"ai",
+								"v1",
+								"basic",
+								"stream"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userPrompt\": \"<string>\",\n  \"systemPrompt\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/ai/basic",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"ai",
+										"basic"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": "<string>"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Basic Indexing",
+			"item": [
+				{
+					"name": "From Filesystem 01",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"path\": \"src/main/resources/documents/company-financial-statement.html\",\n    \"outputFilename\": \"indexed-company-financial-statement.txt\",\n    \"appendIfFileExists\": false,\n    \"keywords\": [\n        \"financial-statement\",\n        \"accounting\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/ai/rag/basic/indexing/document/filesystem",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"basic",
+								"indexing",
+								"document",
+								"filesystem"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\n  'http://localhost:8080/api/ai/rag/indexing/url' \\\n  -H 'accept: application/x-ndjson' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"url\": \"https://en.wikipedia.org/wiki/2024_Summer_Olympics\"\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "From Filesystem 02",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"path\": \"src/main/resources/documents/prospectus-solar-venture.pdf\",\n    \"outputFilename\": \"indexed-prospectus-solar-venture.txt\",\n    \"appendIfFileExists\": false,\n    \"keywords\": [\n        \"prospectus\",\n        \"investment\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/ai/rag/basic/indexing/document/filesystem",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"basic",
+								"indexing",
+								"document",
+								"filesystem"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\n  'http://localhost:8080/api/ai/rag/indexing/url' \\\n  -H 'accept: application/x-ndjson' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"url\": \"https://en.wikipedia.org/wiki/2024_Summer_Olympics\"\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "From URL",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"https://en.wikipedia.org/wiki/2024_Summer_Olympics\",\n    \"outputFilename\": \"indexed-2024-summer-olympics.txt\",\n    \"appendIfFileExists\": false,\n    \"keywords\": [\n        \"sport\",\n        \"olympics-2024\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/ai/rag/basic/indexing/document/url",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"basic",
+								"indexing",
+								"document",
+								"url"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\n  'http://localhost:8080/api/ai/rag/indexing/url' \\\n  -H 'accept: application/x-ndjson' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"url\": \"https://en.wikipedia.org/wiki/2024_Summer_Olympics\"\n}'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Basic RAG Process",
+			"item": [
+				{
+					"name": "Financial Statement 01",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"systemPrompt\": \"You are an accountant.\",\n    \"userPrompt\": \"How much is our marketing expense this year? Is marketing our biggest expense?\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/ai/rag/basic/ask?filename=indexed-company-financial-statement.txt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"basic",
+								"ask"
+							],
+							"query": [
+								{
+									"key": "filename",
+									"value": "indexed-company-financial-statement.txt"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Solar Venture Prospectus 01",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"systemPrompt\": \"You are an investment analyst.\",\n    \"userPrompt\": \"Does Solar Venture make a profit from its products? What are their product's unique selling points?\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/ai/rag/basic/ask?filename=indexed-prospectus-solar-venture.txt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"basic",
+								"ask"
+							],
+							"query": [
+								{
+									"key": "filename",
+									"value": "indexed-prospectus-solar-venture.txt"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Solar Venture Prospectus 02",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"systemPrompt\": \"You are an investment analyst.\",\n    \"userPrompt\": \"Explain Solar Venture's revenue and expense. Is it a profitable company?\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/ai/rag/basic/ask?filename=indexed-company-financial-statement.txt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"basic",
+								"ask"
+							],
+							"query": [
+								{
+									"key": "filename",
+									"value": "indexed-company-financial-statement.txt"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Summer Olympics 2024 01",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"systemPrompt\": null,\n    \"userPrompt\": \"In France, who owns domestic rights to broadcast the 2024 Summer Olympics?\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/ai/rag/basic/ask?filename=indexed-2024-summer-olympics.txt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"basic",
+								"ask"
+							],
+							"query": [
+								{
+									"key": "filename",
+									"value": "indexed-2024-summer-olympics.txt"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vector Indexing",
+			"item": [
+				{
+					"name": "From Filesystem 01",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"path\": \"src/main/resources/documents/C4781004.html\",\n    \"keywords\": [\n        \"C4781004\",\n        \"Clinical Study\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/ai/rag/vector/indexing/document/filesystem",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"vector",
+								"indexing",
+								"document",
+								"filesystem"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\n  'http://localhost:8080/api/ai/rag/indexing/url' \\\n  -H 'accept: application/x-ndjson' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"url\": \"https://en.wikipedia.org/wiki/2024_Summer_Olympics\"\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "From Filesystem 02",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"path\": \"src/main/resources/documents/prospectus-solar-venture.pdf\",\n    \"keywords\": [\n        \"prospectus\",\n        \"investment\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/ai/rag/vector/indexing/document/filesystem",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"vector",
+								"indexing",
+								"document",
+								"filesystem"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\n  'http://localhost:8080/api/ai/rag/indexing/url' \\\n  -H 'accept: application/x-ndjson' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"url\": \"https://en.wikipedia.org/wiki/2024_Summer_Olympics\"\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "From URL",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"https://en.wikipedia.org/wiki/2024_Summer_Olympics\",\n    \"keywords\": [\n        \"sport\",\n        \"olympics-2024\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/ai/rag/vector/indexing/document/url",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"vector",
+								"indexing",
+								"document",
+								"url"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\n  'http://localhost:8080/api/ai/rag/indexing/url' \\\n  -H 'accept: application/x-ndjson' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"url\": \"https://en.wikipedia.org/wiki/2024_Summer_Olympics\"\n}'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vector Indexing Reactive",
+			"item": [
+				{
+					"name": "From Filesystem 01",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"path\": \"src/main/resources/documents/company-financial-statement.html\",\n    \"keywords\": [\n        \"financial-statement\",\n        \"accounting\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/ai/rag/vector/indexing/document/filesystem/reactive",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"vector",
+								"indexing",
+								"document",
+								"filesystem",
+								"reactive"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\n  'http://localhost:8080/api/ai/rag/indexing/url' \\\n  -H 'accept: application/x-ndjson' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"url\": \"https://en.wikipedia.org/wiki/2024_Summer_Olympics\"\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "From Filesystem 02",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"path\": \"src/main/resources/documents/prospectus-solar-venture.pdf\",\n    \"keywords\": [\n        \"prospectus\",\n        \"investment\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/ai/rag/vector/indexing/document/filesystem/reactive",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"vector",
+								"indexing",
+								"document",
+								"filesystem",
+								"reactive"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\n  'http://localhost:8080/api/ai/rag/indexing/url' \\\n  -H 'accept: application/x-ndjson' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"url\": \"https://en.wikipedia.org/wiki/2024_Summer_Olympics\"\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "From URL",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"https://en.wikipedia.org/wiki/2024_Summer_Olympics\",\n    \"keywords\": [\n        \"sport\",\n        \"olympics-2024\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/ai/rag/vector/indexing/document/url/reactive",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"vector",
+								"indexing",
+								"document",
+								"url",
+								"reactive"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\n  'http://localhost:8080/api/ai/rag/indexing/url' \\\n  -H 'accept: application/x-ndjson' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"url\": \"https://en.wikipedia.org/wiki/2024_Summer_Olympics\"\n}'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vector RAG Process",
+			"item": [
+				{
+					"name": "ClinicalPrompts",
+					"item": [
+						{
+							"name": "ResupplyEstimation-Simple",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"systemPrompt\": \"You are a clinical IRT (Interactive response technology) Study design lead\",\n    \"userPrompt\": \"if we are getting 10 Subjects per day on average at a site for Study C4891002 which is planned to run for 2 years, can you estimate how many supplies are required for each interventions per week and how many will be required during whole period of the trial. Estimated enrollments will be 500 total subjects per site\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/ai/rag/vector/ask-vector",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"ai",
+										"rag",
+										"vector",
+										"ask-vector"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ResupplyEstimation-Advance",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"systemPrompt\": \"You are a clinical IRT (Interactive response technology) Study design lead\",\n    \"userPrompt\": \"Study C4891002 is planned to run for 2 years. This study will have 20 sites in total. Enrollment cap is 500 subjects per site. Enrollment trend usually Week 1 - 10 Subjects, Week 2 - 20 Subjects, Week 3 - 5 Subjects, week 4 - 5 Subjects. The drugs are shipped to the site from various depots and on average each shipments takes 4 days to reach site. Can you calculate the drug requiremnt at site, If study is getting live on 20th March 2025, I need a Schedule for each shipment when a depot should ship the required drug to the sites. Generate Date wise list of Shipment request schedule for based on average enrollemnt per week untill cap reaches for full duration of the study. Include all intervention dosage wise and visits planned for C4891002\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/ai/rag/vector/ask-vector",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"ai",
+										"rag",
+										"vector",
+										"ask-vector"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "QuestionSets-Screen",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"systemPrompt\": \"You are a clinical IRT (Interactive response technology) Study design lead\",\n    \"userPrompt\": \"Generate Question sets to screen subjects for study C4891002\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/ai/rag/vector/ask-vector",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"ai",
+										"rag",
+										"vector",
+										"ask-vector"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "QuestionSets-Enroll",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"systemPrompt\": \"You are a clinical IRT (Interactive response technology) Study design lead\",\n    \"userPrompt\": \"Generate Question sets to Enroll subjects in study C4891002 based on cohort\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/ai/rag/vector/ask-vector",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"ai",
+										"rag",
+										"vector",
+										"ask-vector"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "QuestionSets-Dispense",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"systemPrompt\": \"You are a clinical IRT (Interactive response technology) Study design lead\",\n    \"userPrompt\": \" for study C4891002, Generate Question sets for subjects to assign dosage or dispense drug, the dosing style is titration\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/ai/rag/vector/ask-vector",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"ai",
+										"rag",
+										"vector",
+										"ask-vector"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Financial Statement 01",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"systemPrompt\": \"You are an accountant.\",\n    \"userPrompt\": \"How much is our marketing expense this year? Is marketing our biggest expense?\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/ai/rag/vector/ask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"vector",
+								"ask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Solar Venture Prospectus 01",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"systemPrompt\": \"You are an investment analyst.\",\n    \"userPrompt\": \"Does Solar Venture make a profit from its products? What are their product's unique selling points?\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/ai/rag/vector/ask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"vector",
+								"ask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Solar Venture Prospectus 02",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"systemPrompt\": \"You are an investment analyst.\",\n    \"userPrompt\": \"Explain Solar Venture's revenue and expense. Is it a profitable company?\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/ai/rag/vector/ask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"vector",
+								"ask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Summer Olympics 2024 01",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"systemPrompt\": null,\n    \"userPrompt\": \"In France, who owns domestic rights to broadcast the 2024 Summer Olympics?\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/ai/rag/vector/ask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"vector",
+								"ask"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Temporal Indexing",
+			"item": [
+				{
+					"name": "Financial",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/temporal/v1/financial",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"temporal",
+								"v1",
+								"financial"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Knowledge Graph Populator",
+			"item": [
+				{
+					"name": "Alphabuzz Static",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/temporal/v1/alphabuzz/static",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"temporal",
+								"v1",
+								"alphabuzz",
+								"static"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Knowledge Graph RAG Process",
+			"item": [
+				{
+					"name": "Sample 01 - alphabuzz",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userPrompt\": \"What are the 5 latest buzz content, and who created them?\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/ai/rag/kg/ask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"kg",
+								"ask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sample 02- alphabuzz",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userPrompt\": \"What is the most liked topic in the alphabuzz?\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/ai/rag/kg/ask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"kg",
+								"ask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sample 03 - alphabuzz",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userPrompt\": \"Which username has the most followers on alphabuzz?\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/ai/rag/kg/ask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"kg",
+								"ask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sample 04 - alphabuzz",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userPrompt\": \"Show me 5 usernames who publishes the most buzz\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/ai/rag/kg/ask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"kg",
+								"ask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sample 05 - alphabuzz",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userPrompt\": \"Does the username 'zoeturner' publish the most buzz?\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/ai/rag/kg/ask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"kg",
+								"ask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sample 06 - alphabuzz",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userPrompt\": \"Find 5 usernames who publishes the most buzz. Does the username 'zoeturner' publish the most buzz?\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/ai/rag/kg/ask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"kg",
+								"ask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sample 07 - financial statement",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userPrompt\": \"How much is our marketing expense this year? Is marketing our biggest expense?\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/ai/rag/kg/ask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"kg",
+								"ask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sample 08 - solar venture prospectus 01",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"systemPrompt\": \"You are an investment analyst.\",\n    \"userPrompt\": \"Does Solar Venture make a profit from its products? What are their product's unique selling points?\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/ai/rag/kg/ask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ai",
+								"rag",
+								"kg",
+								"ask"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}
