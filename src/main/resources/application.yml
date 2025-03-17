@@ -28,6 +28,7 @@ spring:
     ai:
         openai:
             api-key: ${OPENAI_API_KEY} 
+            enabled: false  # Disable default Spring AI OpenAI configuration
             chat:
                 options:
                     model: gpt-4o-mini
@@ -43,3 +44,11 @@ spring:
         url: r2dbc:postgresql://localhost:5432/postgres
         username: postgres
         password: postgres
+
+# Add PingFederate authentication configuration for OpenAI
+ping:
+    openai:
+        client-id: ${PING_CLIENT_ID:your-default-client-id}
+        client-secret: ${PING_CLIENT_SECRET:your-default-client-secret}
+        token-url: ${PING_TOKEN_URL:https://your-pingfederate-domain/as/token.oauth2}
+        api-base-url: ${OPENAI_API_BASE_URL:https://your-api-gateway/api/v1/openai}

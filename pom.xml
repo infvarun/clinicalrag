@@ -51,7 +51,6 @@
 			<groupId>org.springframework.ai</groupId>
 			<artifactId>spring-ai-openai-spring-boot-starter</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -81,7 +80,12 @@
 			<artifactId>r2dbc-postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-	</dependencies>
+   <dependency>
+     <groupId>org.springframework.ai</groupId>
+     <artifactId>spring-ai-openai</artifactId>
+     <!-- No need to specify version as it's managed by BOM -->
+   </dependency>
+    </dependencies>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
