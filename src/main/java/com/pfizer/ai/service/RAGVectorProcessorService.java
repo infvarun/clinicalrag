@@ -10,11 +10,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.ai.chat.prompt.PromptTemplate;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.vectorstore.SearchRequest;
-import org.springframework.ai.vectorstore.neo4j.Neo4jVectorStore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
+
+import com.pfizer.ai.config.CustomNeo4jVectorStore;
+import com.pfizer.ai.config.CustomOpenAiClient;
 
 import reactor.core.publisher.Flux;
 
@@ -34,7 +36,10 @@ public class RAGVectorProcessorService {
     private PromptTemplate basicAugmentationTemplate;
 
     @Autowired
-    private Neo4jVectorStore vectorStore;
+    private CustomNeo4jVectorStore vectorStore;  // Use custom vector store
+
+    @Autowired
+    private CustomOpenAiClient customOpenAiClient;
 
     @Autowired
     @Qualifier("AIServiceImpl")
@@ -113,33 +118,39 @@ public class RAGVectorProcessorService {
         return aiService.streamBasicResponse(systemPrompt, augmentedUserPrompt);
     }
 
+    /**
+     * Test Neo4j connection without requiring embeddings
+     */
     public boolean testNeo4jConnection() {
         try {
-            // Use a simple Neo4j operation to test connection
-            vectorStore.similaritySearch(SearchRequest.builder().query("test").topK(1).build());
-            return true;
+            return vectorStore.testConnection();
         } catch (Exception e) {
             LOG.error("Neo4j connection test failed", e);
             return false;
         }
     }
-
+    
+    /**
+     * Get document count without requiring embeddings
+     */
     public int getDocumentCount() {
         try {
-            var result = vectorStore.similaritySearch(SearchRequest.builder().query("").topK(1000).build());
-            return result.size();
+            return vectorStore.getDocumentCount();
         } catch (Exception e) {
             LOG.error("Failed to get document count", e);
             return -1;
         }
     }
-
+    
+    /**
+     * Test embedding generation
+     */
     public boolean testEmbeddings(String testString) {
         try {
-            var result = vectorStore.similaritySearch(SearchRequest.builder().query(testString).topK(1).build());
-            return result.size() > 0;
+            List<Float> embeddings = customOpenAiClient.generateEmbeddings(testString);
+            return embeddings != null && !embeddings.isEmpty();
         } catch (Exception e) {
-            LOG.error("Failed to test embeddings", e);
+            LOG.error("Embedding test failed", e);
             return false;
         }
     }
