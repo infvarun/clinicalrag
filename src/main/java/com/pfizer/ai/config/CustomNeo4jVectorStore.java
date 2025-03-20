@@ -33,27 +33,29 @@ public class CustomNeo4jVectorStore implements VectorStore {
     private static final String DEFAULT_INDEX_NAME = "spring-ai-document-index";
     private static final String DEFAULT_EMBEDDING_PROPERTY = "embedding";
     private static final String DEFAULT_ID_PROPERTY = "id";
-    
+    private static final String DEFAULT_TEXT_PROPERTY = "text";
     private final Driver driver;
     private final SessionConfig sessionConfig;
     private final CustomOpenAiClient customOpenAiClient;
     private final String label;
+    private final String textProperty;
     private final String embeddingProperty;
     private final String idProperty;
     private final String indexName;
     private final Neo4jVectorFilterExpressionConverter filterExpressionConverter = new Neo4jVectorFilterExpressionConverter();
     
     /**
-     * Create a custom Neo4j vector store with a custom OpenAI client
-     */
     public CustomNeo4jVectorStore(Driver driver, CustomOpenAiClient customOpenAiClient) {
         this(driver, 
              customOpenAiClient, 
              SessionConfig.defaultConfig(),
              DEFAULT_LABEL,
+             DEFAULT_TEXT_PROPERTY,
              DEFAULT_EMBEDDING_PROPERTY,
              DEFAULT_ID_PROPERTY,
              DEFAULT_INDEX_NAME);
+    }
+             DEFAULT_INDEX_NAME, embeddingProperty);
     }
     
     /**
@@ -63,20 +65,25 @@ public class CustomNeo4jVectorStore implements VectorStore {
             Driver driver, 
             CustomOpenAiClient customOpenAiClient,
             SessionConfig sessionConfig,
-            String label,
+            String nodeLabel,
+            String textProperty,
             String embeddingProperty,
             String idProperty,
             String indexName) {
         
         this.driver = driver;
         this.customOpenAiClient = customOpenAiClient;
-        this.sessionConfig = sessionConfig;
-        this.label = label;
+        
+        // Ensure sessionConfig is never null
+        this.sessionConfig = sessionConfig != null ? sessionConfig : SessionConfig.defaultConfig();
+        
+        this.label = nodeLabel;
+        this.textProperty = textProperty;
         this.embeddingProperty = embeddingProperty;
         this.idProperty = idProperty;
         this.indexName = indexName;
         
-        logger.info("CustomNeo4jVectorStore initialized with label: {}, indexName: {}", label, indexName);
+        logger.info("CustomNeo4jVectorStore initialized with label: {}, indexName: {}", nodeLabel, indexName);
     }
     
     /**
