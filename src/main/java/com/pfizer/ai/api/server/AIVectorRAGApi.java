@@ -12,12 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pfizer.ai.api.request.AIPromptRequest;
-import com.pfizer.ai.api.request.BasicIndexingRequestFromFilesystem;
-import com.pfizer.ai.api.request.BasicIndexingRequestFromURL;
 import com.pfizer.ai.api.request.VectorIndexingRequestFromFilesystem;
 import com.pfizer.ai.api.request.VectorIndexingRequestFromURL;
 import com.pfizer.ai.api.response.BasicIndexingResponse;
-import com.pfizer.ai.service.RAGBasicIndexingService;
 import com.pfizer.ai.service.RAGBasicProcessorService;
 import com.pfizer.ai.service.RAGVectorIndexingService;
 import com.pfizer.ai.service.RAGVectorProcessorService;
